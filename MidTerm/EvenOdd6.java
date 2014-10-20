@@ -54,6 +54,8 @@ public class EvenOdd6
 			answer1=Integer.parseInt(answer);
 		}while (answer1 == 1);
 		
+		
+		// Counting wins and losses
 		JOptionPane.showMessageDialog(null, "The number of wins was " + wins + " and the number of losses was " + losses);
 	} // end class main()
 }// End of class EvenOdd5
