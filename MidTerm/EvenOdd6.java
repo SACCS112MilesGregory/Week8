@@ -1,7 +1,5 @@
 import javax.swing.JOptionPane;
 
-import java.util.Scanner;
-
 public class EvenOdd6
 {
 	public static void main(String[] args) 
@@ -21,17 +19,16 @@ public class EvenOdd6
 			
 			// prompt user to enter name
 			String myGuess =
-					JOptionPane.showInputDialog("Enter your guess: ");
+				JOptionPane.showInputDialog("Enter your guess: ");
 			
-			// create the message
-			String message =
-					String.format("Your guess is ", myGuess);
-			
-			// display the message
-			JOptionPane.showMessageDialog(null, message);
-
 			// convert the user's guess to an integer
 			number=Integer.parseInt(myGuess);
+
+			// create the message
+			if(number %2 == 0)
+				JOptionPane.showMessageDialog(null, "Your guess, " + number + " is even");
+			else
+				JOptionPane.showMessageDialog(null, "Your guess, " + number + " is odd");
 
 			// test whether the random number is odd or even			
 			if(secretNumber %2 == 0)
@@ -42,11 +39,11 @@ public class EvenOdd6
 			// Win or Lose and count the number of wins and losses
 			if(number == secretNumber)
 			{
-				JOptionPane.showMessageDialog(null, "You win!");
+				JOptionPane.showMessageDialog(null, "You got match You win!");
 				wins++;
 			}
 			else
-				JOptionPane.showMessageDialog(null, "You lose!");
+				JOptionPane.showMessageDialog(null, "No match. You lose!");
 				losses++;
 			
 			// check to see if the user wants to continue
@@ -54,8 +51,7 @@ public class EvenOdd6
 			answer1=Integer.parseInt(answer);
 		}while (answer1 == 1);
 		
-		
-		// Counting wins and losses
 		JOptionPane.showMessageDialog(null, "The number of wins was " + wins + " and the number of losses was " + losses);
 	} // end class main()
-}// End of class EvenOdd5
+}// End of class EvenOdd6
+
